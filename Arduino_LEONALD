@@ -1,0 +1,16 @@
+#include <USB-MIDI.h>
+USBMIDI_CREATE_DEFAULT_INSTANCE();
+
+void setup() {
+  // put your setup code here, to run once:
+  MIDI.begin(MIDI_CHANNEL_OFF);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  MIDI.sendNoteOn(69,127,1);
+  delay(1000);
+  MIDI.sendNoteOn(69,0,1);
+  delay(1000);
+}
